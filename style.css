@@ -239,7 +239,26 @@ h1{
     border: 1px solid rgba(15,23,42,0.8);
 
 }
+.projetos-caixa {
+  display: flex;          
+  justify-content: center;
+  flex-wrap: wrap;       
+  gap: 25px;              
+  padding: 20px 0;        
+}
 
+.projetos-card {
+  width: 320px; 
+}
+
+
+@media (max-width: 768px) {
+
+  .projetos-card {
+    width: 90%;
+  }
+
+}
 @media (max-width: 768px) {
 
     .menu {
