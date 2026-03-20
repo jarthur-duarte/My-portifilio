@@ -1,132 +1,471 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;700&display=swap"
-        rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width = device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.png">
-    <title>
-        portf - Joao Arthur Gomes Duarte
-    </title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.Arthur Duarte | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<body>
-    <nav class="navegacao">
-        <ul class="menu">
-            <li>
-                <a href="#Inicio" class="menu-link">Inicio</a>
-            </li>
-            <li>
-                <a href="#Sobre" class="menu-link">Sobre</a>
-            </li>
-            <li>
-                <a href="#Projetos" class="menu-link">Projetos</a>
-            </li>
-            <li>
-                <a href="#Contatos" class="menu-link">Contatos</a>
-            </li>
-        </ul>
-    </nav>
-    <main id="Inicio" class="cabecario">
-        <img src="ftportifolio.jpg" alt="foto de joao Arthur" class="foto-perfil">
-        <h1>Joao Arthur Gomes Duarte</h1>
-        <p class="cabecario-subtitulo">Cesar School student </p>
-    </main>
-    <section id="Sobre" class="Sobre">
-        <h2 class="sobre-titulo">About me : </h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">
-                Hi! I'm a computer science student at Cesar School. I'm currently in my first year of college, and I
-                already have some basic knowledge of JavaScript, Python, and C++.I already lived in Brockton
-                Massachusetts for some months in order to improve my English and my communication, I believe that this
-                experience has been enriching for my English and my personal development.
-            </p>
-        </div>
-    </section>
-    <section id="Projetos" class="Projetos">
-        <h2 class="projetos-titulos">Meus Projetos :</h2>
-        <div class="projetos-caixa">
-            <div class="projetos-card">
-                <img src="Opera Snapshot_2025-06-03_203501_make.bitsy.org.png" alt="bitsy game" class="projeto-img">
-
-                <div class="caixa-textos-projetos">
-                    <h3 class="inf-projetos">Insurgente_three | bitsy game</h3>
-                    <p class="paragrafo-projetos">game made in a bitsy plataform. This game was developed for me and 2
-                        friends for a colege matter </p>
-                </div>
-            </div>
-
-            <div class="projetos-card">
-                <img src="WhatsApp Image 2025-06-05 at 11.40.40_1954a0d3.jpg" alt="colege project" class="projeto-img">
-                <div class="caixa-textos-projetos">
-                    <h3 class="inf-projetos">hunt stars(caca as estrelas)</h3>
-                    <p class="paragrafo-projetos2">a project developed by my colege group. The goal of the game was
-                        bring entreteriment at the same time at we exercice the healt of people with motor disabilities.
-                        we desenvolve the code using c++ and bluid with Arduino and pressure sensors for the blower </p>
-                </div>
-            </div>
-
-            <div class="projetos-card">
-                <img src="WhatsApp Image 2025-06-09 at 18.51.11_5509f051.jpg" alt="colege project" class="projeto-img">
-                <div class="caixa-textos-projetos">
-                    <h3 class="inf-projetos">Life Pet</h3>
-                    <p class="paragrafo-projetos3">a project developed also by my colege group. The goal of the progam
-                        was create a petshop website and the user would register yourself and your pets incluiding the
-                        pets goals, name ,age and more!
-                        <link rel="stylesheet" href="https://github.com/jarthur-duarte" class="link-git">
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="Contatos" class="contatos">
-        <h2 class="contatos-titulo">contatos</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-            <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form" id="nome">
-            </div>
-            <div class="grupo-form">
-                <textarea class="texto-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
-            </div>
-            <button type="submit" class="botao-form">Enviar Mensagem</button>
-        </form>
-
-        <a href="https://www.linkedin.com/notifications/?filter=all">
-            <img width="50"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
-        </a>
-        <a href="https://www.instagram.com/j.arthur_gmsduarte" target="_blank" title="Meu Instagram">
-            <img width="55" src="icons8-instagram-logo-94.png" />
-        </a>
-
-    </section>
-
-
-    <script>
-        function enviarWhats(event) {
-            event.preventDefault()
-
-            const nome = document.getElementById('nome');
-            const mensagem = document.getElementById('mensagem');
-            const telefone = '5587988240512'
-
-            const texto = `Ola! Me chamo ${nome.value}, ${mensagem.value}`
-            const msgFormatada = encodeURIComponent(texto)
-
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
-            console.log(url)
-
-            window.open(url, '_blank')
+    <style>
+        :root {
+            --bg-color: #121212;
+            --bg-card: #1E1E1E;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0A0;
+            --accent-color: #7B2CBF;
+            --hover-color: #9D4EDD;
+            --transition: all 0.3s ease;
         }
 
-    </script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span { color: var(--accent-color); }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .about {
+            padding: 100px 0;
+            background-color: var(--bg-card);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-badge {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        .skill-badge:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .projects { padding: 100px 0; }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.3);
+        }
+
+        /* --- ESTILO DAS IMAGENS --- */
+        .project-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img-container img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            background-color: rgba(123, 44, 191, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-links a:hover { color: var(--accent-color); }
+
+        footer {
+            padding: 50px 0;
+            background-color: var(--bg-card);
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .skills-container { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">&lt;JA /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Olá, eu sou <span>Joao Arthur Gomes Duarte</span></h1>
+            <h2>Estudante de Ciência da Computação pela  CESAR School</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px auto;">Desenvolvedor em formação focado em criar soluções eficientes, transitando entre o back-end robusto com Django e a interatividade de jogos com Unity.</p>
+            <a href="#projects" class="btn">Ver Projetos</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Atualmente no 3º período de Ciência da Computação no CESAR School, no Recife. Tenho paixão por resolver problemas complexos através do código.</p>
+                    <p>Minha jornada me levou a explorar o desenvolvimento web back-end com Python e Django, desenvolvimento de jogos mobile com C#,Unity e em C.</p>
+                </div>
+                <div class="about-skills">
+                    <h3 style="margin-bottom: 20px;">Tecnologias</h3>
+                    <div class="skills-container">
+                        <span class="skill-badge"><i class="fab fa-python" style="color:#ffdd54"></i> Python</span>
+                        <span class="skill-badge"><i class="fas fa-database"></i> Django</span>
+                        <span class="skill-badge"><i class="fab fa-unity"></i> Unity / C#</span>
+                        <span class="skill-badge"><i class="fab fa-git-alt" style="color:#f1502f"></i> Git</span>
+                        <span class="skill-badge"><i class="fab fa-html5" style="color:#e34c26"></i> HTML5</span>
+                        <span class="skill-badge"><i class="fab fa-css3-alt" style="color:#264de4"></i> CSS3</span>
+                        <span class="skill-badge"><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</span>
+                        <span class="skill-badge"><i class="fab fa-c" style="color:#f7df1e"></i> C</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="sushi.png" alt="Plataforma Sushi Em Casa">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sushi Em Casa</h3>
+                        <p>Plataforma completa de delivery para restaurante de sushi. Sistema de cardápio digital, gestão de pedidos e integração de banco de dados.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jarthur-duarte/SushiEmCasa" target="_blank"><i class="fab fa-github"></i> Código</a>
+                            <a href="https://sushiemcasa.pythonanywhere.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="brasilino.jpeg" alt="Projeto Brasilino">
+                    </div>
+                    <div class="project-info">
+                        <h3>Brasilino: Inclusão Digital</h3>
+                        <p>Atuação como educador de lógica de programação para crianças e adolescentes neurodivergentes, adaptando metodologias de ensino.</p>
+                        <div class="project-tags">
+                            <span class="tag">Educação</span>
+                            <span class="tag">Lógica de Prog.</span>
+                            <span class="tag">Inclusão</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://sites.google.com/cesar.school/robtica-26-1/home" target="_blank"><i class="fas fa-chalkboard-teacher"></i> Sobre a Experiência</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="REC-O.png" alt="Projetos de Infraestrutura">
+                    </div>
+                    <div class="project-info">
+                        <h3>Jornal do Commercio REC.O</h3>
+                        <p>Projeto desenvolvido em Python, com a framework Django para resolver pontos de atrito na experiência do usuário, como a jornada longa até o conteúdo desejado e um layout pouco convidativo.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/EduardaSouzaOL/Projetos2_JC_REC.O" target="_blank"><i class="fab fa-github"></i> Ver Repo</a>
+                            <a href="https://sites.google.com/d/1H1WAQs5YY0CATvldSltNKSlR4M0-yEW2/p/19KdY7mc0QfeCC3Vyn48laGZW0uUeZV2J/edit" target="_blank"><i class="fas fa-file-alt"></i> Documentação</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-title" style="margin-top: 100px;">Outros Projetos</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Arkanoid C</h3>
+                        <p>Projeto final da disciplina de Programação Imperativa e Funcional (2025.2). Um clone moderno do clássico Arkanoid desenvolvido em C puro utilizando a biblioteca Raylib.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Pthreads</span>
+                            <span class="tag">Concorrência</span>
+                        </div>
+                        <div class="project-links" style="margin-top: 15px;">
+                            <a href="https://github.com/luizabalmeida/ARKANOID-GAME" target="_blank"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Projeto SEBRAE (Matriz CSD)</h3>
+                        <p>Análise de requisitos e levantamento de dados utilizando Matriz CSD para identificar certezas, suposições e dúvidas de um problema real.</p>
+                        <div class="project-tags">
+                            <span class="tag">Eng. de Software</span>
+                            <span class="tag">UX Research</span>
+                            <span class="tag">Metodologia Ágil</span>
+                        </div>
+                        <div class="project-links" style="margin-top: 15px;">
+                            <a href="#" target="_blank"><i class="fas fa-file-alt"></i> Ver Documentação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Protótipo de Jogo Mobile</h3>
+                        <p>Jogo 2D em desenvolvimento focado em mecânicas casuais. Implementação de física, UI e scripts de controle de personagem.</p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Dev</span>
+                        </div>
+                        <div class="project-links" style="margin-top: 15px;">
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;"><i class="fas fa-tools"></i> Em Desenvolvimento</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/jarthur-duarte" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/arthur-duarte-380513356/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/j.arthur_gmsduarte/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>joaoarthurdduarte@gmail.com</p>
+            <p>&copy; 2026 J. Arthur Duarte. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">Recife, PE</p>
+        </div>
+    </footer>
+
 </body>
-
-
-
 </html>
